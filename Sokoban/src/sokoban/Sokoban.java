@@ -87,6 +87,7 @@ public class Sokoban {
                 State s = applyMove(s0, m);
                 if (isLegit(s, m) && !cameFrom.containsKey(s)) {
                     cameFrom.put(s, m);
+                    q.add(s);
                 }
             }
         }
