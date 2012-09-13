@@ -1,5 +1,10 @@
 ## General .gitignore file by Arash Rouhani (Tarrasch)
 ## Inspired from whitespace bot GunioRobot
+#
+Sokoban/build.xml
+Sokoban/build/classes/.netbeans_automatic_build
+Sokoban/manifest.mf
+
 
 # backup files
 *.swp
