@@ -62,7 +62,7 @@ public class Sokoban {
     public List<Move> solve() {
         State s = bfs();
         List<Move> moves = new ArrayList<Move>();
-        while(s != initState){
+        while(!s.equals(initState)){
             Move m = cameFrom.get(s);
             moves.add(m);
             s = applyMove(s, m.reverse());
@@ -116,7 +116,7 @@ public class Sokoban {
         Point[] newBoxes = new Point[s.getBoxes().length];
         for (int i = 0; i < newBoxes.length; i++) {
             Point point = s.getBoxes()[i];
-            if(nextLocation == point){
+            if(nextLocation.equals(point)){
                 point = m.movePoint(point);
             }
             newBoxes[i] = point;
