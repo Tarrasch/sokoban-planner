@@ -1,0 +1,10 @@
+(define (problem simple)
+  (:domain sokoban-domain)
+  (:objects s1 s2 s3 s4)
+  (:init (adjacent_h s1 s2) (adjacent_h s2 s1)
+         (adjacent_h s2 s3) (adjacent_h s3 s2)
+         (adjacent_v s2 s4) (adjacent_v s4 s2)
+         (has_player s1)
+         (has_box s2))
+  (:goal (has_box s3))
+
