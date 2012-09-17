@@ -22,7 +22,7 @@ public class Sokoban {
 
     private boolean isFinal(State s0) {
         for (Point box : s0.getBoxes()) {
-            if(getMap()[box.y][box.x] != Map.SquareType.Target){
+            if(getMap()[box.x][box.y] != Map.SquareType.Target){
                 return false;
             }
         }
@@ -51,6 +51,11 @@ public class Sokoban {
         private Move reverse() {
             return new Move((dir+2)%4);
         }
+        
+        @Override
+        public String toString(){
+            return ""+ dir;
+        }
     }
     public Map gameMap;
 
@@ -65,6 +70,7 @@ public class Sokoban {
         while(!s.equals(initState)){
             Move m = cameFrom.get(s);
             moves.add(m);
+            //System.out.println(m.reverse());
             s = applyMove(s, m.reverse());
         }
         
@@ -81,29 +87,37 @@ public class Sokoban {
         while (!q.isEmpty()) {
             State s0 = q.remove();
             if(isFinal(s0)){
+                System.out.println("Final move");
                 return s0;
             }
             for (Move m : Move.directions()) {
                 State s = applyMove(s0, m);
-                if (isLegit(s, m) && !cameFrom.containsKey(s)) {
+                if (isLegit(s) && !cameFrom.containsKey(s)) {
                     cameFrom.put(s, m);
                     q.add(s);
+                    System.out.println("added to queue");
                 }
             }
         }
         return null;
     }
 
-    private boolean isLegit(State s0, Move m) {
-        State s = applyMove(s0, m);
-        List<Point> all = Arrays.asList(s.getBoxes());
-        all.add(s.getAgent());
+    private boolean isLegit(State s0) {
+        //State s = applyMove(s0, m); //Is this right?? Do we need to apply move again???
+        ArrayList<Point> all = new ArrayList<Point>(Arrays.asList(s0.getBoxes()));
+        all.add(s0.getAgent());
         
         if(hasDuplicates(all)){
             return false;
         }
         for (Point p : all) {
-            if (getMap()[p.y][p.x] == Map.SquareType.Wall) {
+            System.out.println("Move: " + p);
+            if(p.y >= getMap().length || p.x >= getMap()[0].length || p.y < 0 || p.x < 0){
+                System.out.println("Move was not legit!");
+                return false;
+            }
+            if (getMap()[p.x][p.y].equals(Map.SquareType.Wall)) {
+                System.out.println("WALL! move not legit");
                 return false;
             }
         }
@@ -134,6 +148,19 @@ public class Sokoban {
             lump.add(i);
         }
         return false;
+    }
+    
+    public Sokoban(Map m, State s){
+        gameMap = m;
+        initState = s;
+    }
+    
+    public void outputSolution(){
+        List<Move> sol = this.solve();
+        
+        for(Move m: sol){
+            System.out.println(m);
+        }
     }
     
 

@@ -7,11 +7,9 @@ package sokoban;
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -61,18 +59,18 @@ public class Main {
         	
         	map_array = new Map.SquareType[rows][];
     		
-	    	for (int i = 0; i < rows; ++i) {
+	    	for (int i = 0; i < rows; i++) {
 	    		map_array[i] = new Map.SquareType[cols];
 	        	
         		String line = br.readLine();
-        		for (int j = 0; j < line.length(); ++j) {
+        		for (int j = 0; j < line.length(); j++) {
         			switch (line.charAt(j)) {
         				case ' ':
         					map_array[i][j] = Map.SquareType.Empty;
-        					break;
+                                        break;
         				case '#':
         					map_array[i][j] = Map.SquareType.Wall;
-            				break;
+                                        break;
         				case '$':
         					if (agent != null) {
         						System.out.println("Error: Agent appears more than once in the map");
@@ -121,10 +119,13 @@ public class Main {
     	Map map = new Map(map_array);
     	State state = new State(agent, boxes);
     	
-    	
-    	
     	// OUTPUT OF THE READ MAP
     	print_status(map, state);
+        
+        // Initialize game
+        Sokoban game = new Sokoban(map, state);
+        game.outputSolution();
+        
     }
     
     private static void print_status(Map map, State state) {
