@@ -115,7 +115,7 @@ public class Main {
     		System.exit(1);
     	}
     	
-    	Set<Point> boxes = new TreeSet<Point>(boxes_list);
+    	Set<Point> boxes = new HashSet<Point>(boxes_list);
     	
     	Map map = new Map(map_array);
     	State state = new State(agent, boxes);
@@ -158,5 +158,6 @@ public class Main {
             }
             System.out.println("");
     	}
+        System.out.println("");
     }
 }
