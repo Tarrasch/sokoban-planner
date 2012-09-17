@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -68,9 +69,10 @@ public class Sokoban {
         State s = bfs();
         List<Move> moves = new ArrayList<Move>();
         while(!s.equals(initState)){
+            Main.print_status(gameMap, s);
             Move m = cameFrom.get(s);
             moves.add(m);
-            //System.out.println(m.reverse());
+            
             s = applyMove(s, m.reverse());
         }
         
@@ -86,6 +88,7 @@ public class Sokoban {
         q.add(initState);
         while (!q.isEmpty()) {
             State s0 = q.remove();
+            Main.print_status(gameMap, s0);
             if(isFinal(s0)){
                 System.out.println("Final move");
                 return s0;
@@ -99,25 +102,26 @@ public class Sokoban {
                 }
             }
         }
+        System.err.println("NOOOS");
         return null;
     }
 
     private boolean isLegit(State s0) {
         //State s = applyMove(s0, m); //Is this right?? Do we need to apply move again???
-        ArrayList<Point> all = new ArrayList<Point>(Arrays.asList(s0.getBoxes()));
+        Set<Point> all = new HashSet<Point>(s0.getBoxes());
         all.add(s0.getAgent());
         
-        if(hasDuplicates(all)){
+        if(all.size() < initState.getBoxes().size() + 1){
             return false;
         }
         for (Point p : all) {
-            System.out.println("Move: " + p);
-            if(p.y >= getMap().length || p.x >= getMap()[0].length || p.y < 0 || p.x < 0){
-                System.out.println("Move was not legit!");
+            //System.out.println("Move: " + p);
+            /*if(p.y >= getMap().length || p.x >= getMap()[0].length || p.y < 0 || p.x < 0){
+               // System.out.println("Move was not legit!");
                 return false;
-            }
+            }*/
             if (getMap()[p.x][p.y].equals(Map.SquareType.Wall)) {
-                System.out.println("WALL! move not legit");
+                //System.out.println("WALL! move not legit");
                 return false;
             }
         }
@@ -127,28 +131,15 @@ public class Sokoban {
     private State applyMove(State s, Move m) {
         Point agent = s.getAgent();
         Point nextLocation = m.movePoint(agent);
-        Point[] newBoxes = new Point[s.getBoxes().length];
-        for (int i = 0; i < newBoxes.length; i++) {
-            Point point = s.getBoxes()[i];
-            if(nextLocation.equals(point)){
-                point = m.movePoint(point);
-            }
-            newBoxes[i] = point;
+        Set<Point> newBoxes = new HashSet<Point>(s.getBoxes());
+        
+        if(newBoxes.contains(nextLocation)){
+            newBoxes.remove(nextLocation);
+            newBoxes.add(m.movePoint(nextLocation));
         }
         return new State(nextLocation, newBoxes);
     }
 
-    static boolean hasDuplicates(final List<Point> points) {
-        // Taken from <http://stackoverflow.com/a/3951563/621449>
-        Set<Point> lump = new HashSet<Point>();
-        for (Point i : points) {
-            if (lump.contains(i)) {
-                return true;
-            }
-            lump.add(i);
-        }
-        return false;
-    }
     
     public Sokoban(Map m, State s){
         gameMap = m;

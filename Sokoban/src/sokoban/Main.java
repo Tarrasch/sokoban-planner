@@ -8,8 +8,12 @@ import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import javax.sound.midi.Soundbank;
 
 /**
  *
@@ -111,16 +115,13 @@ public class Main {
     		System.exit(1);
     	}
     	
-    	Point[] boxes = new Point[boxes_list.size()];
-    	for (int i = 0; i < boxes_list.size(); ++i) {
-    		boxes[i] = boxes_list.get(i);
-    	}
+    	Set<Point> boxes = new TreeSet<Point>(boxes_list);
     	
     	Map map = new Map(map_array);
     	State state = new State(agent, boxes);
     	
     	// OUTPUT OF THE READ MAP
-    	print_status(map, state);
+    	//print_status(map, state);
         
         // Initialize game
         Sokoban game = new Sokoban(map, state);
@@ -128,50 +129,34 @@ public class Main {
         
     }
     
-    private static void print_status(Map map, State state) {
-    	Map.SquareType[][] map_array = map.map;
-    	Point agent = state.getAgent();
-    	Point[] boxes = state.getBoxes();
-    	
-    	for (int i = 0; i < map_array.length; ++i) {
-    		for (int j = 0; j < map_array[i].length; ++j) {
-    			switch (map_array[i][j]) {
-	    			case Wall:
-	    				System.out.print("#");
-	    				break;
-	    			case Empty:
-	    				if (agent.x == i && agent.y == j) {
-	    					System.out.print("$");
-	    				}
-	    				else {
-	    					int k;
-	    					for (k = 0; k < boxes.length; ++k) {
-	    						if (boxes[k].x == i && boxes[k].y == j) {
-	    							System.out.print("o");
-	    							break;
-	    						}
-	    					}
-	    					if (k == boxes.length) System.out.print(" ");
-	    				}
-	    				break;
-	    			case Target:
-	    				if (agent.x == i && agent.y == j) {
-	    					System.out.print("$");
-	    				}
-	    				else {
-	    					int k;
-	    					for (k = 0; k < boxes.length; ++k) {
-	    						if (boxes[k].x == i && boxes[k].y == j) {
-	    							System.out.print("o");
-	    							continue;
-	    						}
-	    					}
-	    					if (k == boxes.length) System.out.print("_");
-	    				}
-	    				break;
-    			}
-    		}
-    		System.out.println("");
+    public static void print_status(Map map, State state) {
+        Map.SquareType[][] map_array = map.map;
+        Point agent = state.getAgent();
+        HashSet<Point> boxes = new HashSet<Point>(state.getBoxes());
+
+        for (int i = 0; i < map_array.length; ++i) {
+            for (int j = 0; j < map_array[i].length; ++j) {
+                String out = null;
+                switch (map_array[i][j]) {
+                    case Wall:
+                        out = "#";
+                        break;
+                    case Empty:
+                        out = " ";
+                        break;
+                    case Target:
+                        out = "_";
+                        break;
+                }
+                if (agent.x == i && agent.y == j) {
+                    out = "$";
+                }
+                if (boxes.contains(new Point(i, j))) {
+                    out = "o";
+                }
+                System.out.print(out);
+            }
+            System.out.println("");
     	}
     }
 }

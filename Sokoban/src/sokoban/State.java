@@ -3,6 +3,7 @@ package sokoban;
 
 import java.awt.Point;
 import java.util.Arrays;
+import java.util.Set;
 
 /*
  * To change this template, choose Tools | Templates
@@ -19,8 +20,16 @@ public class State {
         return agent;
     }
 
-    public Point[] getBoxes() {
+    public Set<Point> getBoxes() {
         return boxes;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + (this.agent != null ? this.agent.hashCode() : 0);
+        hash = 71 * hash + (this.boxes != null ? this.boxes.hashCode() : 0);
+        return hash;
     }
 
     @Override
@@ -35,26 +44,18 @@ public class State {
         if (this.agent != other.agent && (this.agent == null || !this.agent.equals(other.agent))) {
             return false;
         }
-        if (!Arrays.deepEquals(this.boxes, other.boxes)) {
+        if (this.boxes != other.boxes && (this.boxes == null || !this.boxes.equals(other.boxes))) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + (this.agent != null ? this.agent.hashCode() : 0);
-        hash = 79 * hash + Arrays.deepHashCode(this.boxes);
-        return hash;
-    }
-    
     private Point agent;
-    // TODO: Whoups, would have been better with Set instead of array!
-    private Point[] boxes;
+    private Set<Point> boxes;
 
-    public State(Point agent, Point[] boxes) {
+    public State(Point agent, Set<Point> boxes) {
         this.agent = agent;
         this.boxes = boxes;
     }
+
 }
