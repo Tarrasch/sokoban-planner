@@ -73,7 +73,7 @@ public class Sokoban {
             Move m = cameFrom.get(s);
             moves.add(m);
             
-            s = applyMove(s, m.reverse());
+            s = undoMove(s,m);
         }
         
         return moves;
@@ -138,6 +138,18 @@ public class Sokoban {
             newBoxes.add(m.movePoint(nextLocation));
         }
         return new State(nextLocation, newBoxes);
+    }
+    
+    private State undoMove(State s, Move m) {
+        Point agent = s.getAgent();
+        Point prevLocation = m.reverse().movePoint(agent);
+        Set<Point> newBoxes = new HashSet<Point>(s.getBoxes());
+        
+        if(newBoxes.contains(m.movePoint(agent))){
+            newBoxes.remove((m.movePoint(agent)));
+            newBoxes.add(agent);
+        }
+        return new State(prevLocation, newBoxes);
     }
 
     
