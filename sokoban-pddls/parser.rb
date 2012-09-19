@@ -1,6 +1,6 @@
 map = []
 
-STDIN.read.split("\n").each do |a|
+STDIN.read.split("\n").drop(2).each do |a|
    map << a
 end
 
@@ -10,8 +10,8 @@ def name(i, j)
   "s_#{i}_#{j}"
 end
 objects = []
-adj_h = []
-adj_v = []
+adj = []
+adj_2 = []
 players = []
 boxes = []
 goals = []
@@ -21,18 +21,26 @@ goals = []
     v = map[i][j]
     x = name(i, j)
     objects << x if v != "#"
-    players << "(has_player #{x})" if v == "P"
-    boxes << "(has_box #{x})" if v == "B"
-    goals << "(has_box #{x})" if v == "G"
+    players << "(has_player #{x})" if v == "$"
+    boxes << "(has_box #{x})" if v == "o"
+    goals << "(has_box #{x})" if v == "_"
 
     next if v == "#"
 
-    [i-1, i+1].each { |i2|
-      adj_v << "(adjacent_v #{x} #{name(i2, j)})" if map[i2][j] != "#"
+    dy = [1, 0, -1,  0]
+    dx = [0, 1,  0, -1]
+
+    0.upto(3) { |ix|
+      i2 = i + dy[ix]
+      j2 = j + dx[ix]
+      adj << "(adjacent #{x} #{name(i2, j2)})" if map[i2][j2] != "#"
     }
 
-    [j-1, j+1].each { |j2|
-      adj_h << "(adjacent_h #{x} #{name(i, j2)})" if map[i][j2] != "#"
+    0.upto(3) { |ix|
+      i2 = i + dy[ix] * 2
+      j2 = j + dx[ix] * 2
+      next if i2 < 0 || j2 < 0 || i2 >= n || j2 >= m
+      adj_2 << "(adjacent_2 #{x} #{name(i2, j2)})" if map[i2][j2] != "#"
     }
   }
 }
@@ -41,9 +49,10 @@ print %Q{(define (problem simple)
 }
 print "  (:objects #{objects.join(" ")})\n"
 print "  (:init\n"
-print "     #{adj_h.join(" ")})\n"
-print "     #{adj_v.join(" ")})\n"
+print "     #{adj.join(" ")}\n"
+print "     #{adj_2.join(" ")}\n"
 print "     #{players.first}\n"
 print "     #{boxes.join(" ")})\n"
 print "  (:goal #{goals.join(" ")})\n"
+print ")\n"
 
