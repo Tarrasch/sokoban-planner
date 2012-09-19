@@ -153,7 +153,12 @@ public class Main {
                     out = "$";
                 }
                 if (boxes.contains(new Point(i, j))) {
-                    out = "o";
+                	if (map_array[i][j] == Target) {
+						out = "O";
+					}
+					else {
+						out = "o";
+					}
                 }
                 System.out.print(out);
             }
