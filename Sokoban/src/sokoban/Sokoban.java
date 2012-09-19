@@ -70,35 +70,38 @@ public class Sokoban {
         List<Move> moves = new ArrayList<Move>();
         while(!s.equals(initState)){
             Main.print_status(gameMap, s);
-            Move m = cameFrom.get(s);
+            Move m = moveMade.get(s);
             moves.add(m);
             
-            s = undoMove(s,m);
+            s = cameFrom.get(s);
         }
         
         return moves;
     }
     
-    HashMap<State, Move> cameFrom;
+    HashMap<State, Move> moveMade;
+    HashMap<State, State> cameFrom ;
 
     private State bfs() {
         // this is not memoized!
-        cameFrom = new HashMap<State, Move>();
+        moveMade = new HashMap<State, Move>();
+        cameFrom = new HashMap<State, State>();
         Queue<State> q = new LinkedList<State>();
         q.add(initState);
         while (!q.isEmpty()) {
             State s0 = q.remove();
-            Main.print_status(gameMap, s0);
+            //Main.print_status(gameMap, s0);
             if(isFinal(s0)){
-                System.out.println("Final move");
+                System.out.println("Final move, searched states: " + cameFrom.size());
                 return s0;
             }
             for (Move m : Move.directions()) {
                 State s = applyMove(s0, m);
-                if (isLegit(s) && !cameFrom.containsKey(s)) {
-                    cameFrom.put(s, m);
+                if (isLegit(s) && !moveMade.containsKey(s)) {
+                    moveMade.put(s, m);
+                    cameFrom.put(s, s0);
                     q.add(s);
-                    System.out.println("added to queue");
+                   // System.out.println("added to queue");
                 }
             }
         }
@@ -138,18 +141,6 @@ public class Sokoban {
             newBoxes.add(m.movePoint(nextLocation));
         }
         return new State(nextLocation, newBoxes);
-    }
-    
-    private State undoMove(State s, Move m) {
-        Point agent = s.getAgent();
-        Point prevLocation = m.reverse().movePoint(agent);
-        Set<Point> newBoxes = new HashSet<Point>(s.getBoxes());
-        
-        if(newBoxes.contains(m.movePoint(agent))){
-            newBoxes.remove((m.movePoint(agent)));
-            newBoxes.add(agent);
-        }
-        return new State(prevLocation, newBoxes);
     }
 
     

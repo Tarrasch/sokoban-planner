@@ -102,6 +102,7 @@ public class Main {
 	    	}
     	}
     	catch (Throwable e) {
+            e.printStackTrace();
     		System.out.println("Error reading file");
     		System.exit(1);
     	}
