@@ -53,6 +53,6 @@ print "     #{adj.join(" ")}\n"
 print "     #{adj_2.join(" ")}\n"
 print "     #{players.first}\n"
 print "     #{boxes.join(" ")})\n"
-print "  (:goal #{goals.join(" ")})\n"
+print "  (:goal (and #{goals.join(" ")}))\n"
 print ")\n"
 
