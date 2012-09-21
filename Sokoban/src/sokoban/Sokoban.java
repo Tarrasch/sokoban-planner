@@ -69,7 +69,6 @@ public class Sokoban {
         State s = bfs();
         List<Move> moves = new ArrayList<Move>();
         while(!s.equals(initState)){
-            Main.print_status(gameMap, s);
             Move m = moveMade.get(s);
             moves.add(m);
             
