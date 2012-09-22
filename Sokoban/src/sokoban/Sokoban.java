@@ -99,6 +99,14 @@ public class Sokoban {
                 return false;
             }
         }
+        
+        // Now also call "dead-end" states as not legit
+        for (Point point : s0.getBoxes()) {
+            if(gameMap.deadEndForBoxes(point)){
+                return false;
+            }
+        }
+        
         return true;
     }
 
