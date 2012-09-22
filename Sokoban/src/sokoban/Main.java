@@ -67,41 +67,41 @@ public class Main {
 
             map_array = new Map.SquareType[rows][];
 
-            for (int i = 0; i < rows; i++) {
-                map_array[i] = new Map.SquareType[cols];
+            for (int y = 0; y < rows; y++) {
+                map_array[y] = new Map.SquareType[cols];
 
                 String line = br.readLine();
-                for (int j = 0; j < line.length(); j++) {
-                    switch (line.charAt(j)) {
+                for (int x = 0; x < line.length(); x++) {
+                    switch (line.charAt(x)) {
                         case ' ':
-                            map_array[i][j] = Map.SquareType.Empty;
+                            map_array[y][x] = Map.SquareType.Empty;
                             break;
                         case '#':
-                            map_array[i][j] = Map.SquareType.Wall;
+                            map_array[y][x] = Map.SquareType.Wall;
                             break;
                         case '$':
                             if (agent != null) {
                                 System.out.println("Error: Agent appears more than once in the map");
                                 System.exit(1);
                             }
-                            agent = new Point(i, j);
-                            map_array[i][j] = Map.SquareType.Empty;
+                            agent = new Point(x, y);
+                            map_array[y][x] = Map.SquareType.Empty;
                             break;
                         case '_':
-                            map_array[i][j] = Map.SquareType.Target;
+                            map_array[y][x] = Map.SquareType.Target;
                             ++targets;
                             break;
                         case 'o':
                             if (boxes_list == null) {
                                 boxes_list = new LinkedList<Point>();
                             }
-                            boxes_list.add(new Point(i, j));
-                            map_array[i][j] = Map.SquareType.Empty;
+                            boxes_list.add(new Point(x, y));
+                            map_array[y][x] = Map.SquareType.Empty;
                             break;
                     }
                 }
                 for (int j = line.length(); j < cols; ++j) {
-                    map_array[i][j] = Map.SquareType.Empty;
+                    map_array[y][j] = Map.SquareType.Empty;
                 }
             }
         } catch (Throwable e) {
@@ -138,10 +138,10 @@ public class Main {
         Point agent = state.getAgent();
         HashSet<Point> boxes = new HashSet<Point>(state.getBoxes());
 
-        for (int i = 0; i < map_array.length; ++i) {
-            for (int j = 0; j < map_array[i].length; ++j) {
+        for (int y = 0; y < map_array.length; ++y) {
+            for (int x = 0; x < map_array[y].length; ++x) {
                 String out = null;
-                switch (map_array[i][j]) {
+                switch (map_array[y][x]) {
                     case Wall:
                         out = "#";
                         break;
@@ -152,11 +152,11 @@ public class Main {
                         out = "_";
                         break;
                 }
-                if (agent.x == i && agent.y == j) {
+                if (agent.x == y && agent.y == x) {
                     out = "$";
                 }
-                if (boxes.contains(new Point(i, j))) {
-                    if (map_array[i][j] == Map.SquareType.Target) {
+                if (boxes.contains(new Point(x, y))) {
+                    if (map_array[y][x] == Map.SquareType.Target) {
                         out = "O";
                     } else {
                         out = "o";

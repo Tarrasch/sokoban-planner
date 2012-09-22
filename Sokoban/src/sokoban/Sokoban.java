@@ -23,7 +23,7 @@ public class Sokoban {
 
     private boolean isFinal(State s0) {
         for (Point box : s0.getBoxes()) {
-            if(getMap()[box.x][box.y] != Map.SquareType.Target){
+            if(readMap(box) != Map.SquareType.Target){
                 return false;
             }
         }
@@ -32,8 +32,8 @@ public class Sokoban {
 
     public Map gameMap;
 
-    private Map.SquareType[][] getMap() {
-        return gameMap.map;
+    private Map.SquareType readMap(Point p) {
+        return gameMap.map[p.y][p.x];
     }
     private State initState;
 
@@ -94,7 +94,7 @@ public class Sokoban {
                // System.out.println("Move was not legit!");
                 return false;
             }*/
-            if (getMap()[p.x][p.y].equals(Map.SquareType.Wall)) {
+            if (readMap(p).equals(Map.SquareType.Wall)) {
                 //System.out.println("WALL! move not legit");
                 return false;
             }

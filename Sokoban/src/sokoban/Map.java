@@ -14,7 +14,7 @@ public class Map {
         Empty, Wall, Target;
     }
     
-    public SquareType[][] map;
+    public SquareType[][] map; // [y][x]
 
     public Map(SquareType[][] map) {
         this.map = map;
