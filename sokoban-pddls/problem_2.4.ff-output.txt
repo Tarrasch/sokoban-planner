@@ -1,0 +1,124 @@
+
+ff: parsing domain file
+domain 'SOKOBAN-DOMAIN' defined
+ ... done.
+ff: parsing problem file
+problem 'SIMPLE' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   17 into depth [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   6            [1]
+                                   5            [1]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+advancing to distance :   17
+                          11
+                          10
+                           8
+                           6
+                           5
+                           4
+                           3
+                           2
+                           1
+                           0
+
+ff: found legal plan as follows
+
+step    0: MOVE-PLAYER S_3_5 S_4_5
+        1: MOVE-PLAYER S_4_5 S_4_4
+        2: MOVE-PLAYER S_4_4 S_4_3
+        3: MOVE-PLAYER S_4_3 S_4_2
+        4: MOVE-PLAYER S_4_2 S_4_1
+        5: MOVE-PLAYER S_4_1 S_3_1
+        6: PUSH-BOX S_3_1 S_3_2 S_3_3
+        7: PUSH-BOX S_3_2 S_3_3 S_3_4
+        8: MOVE-PLAYER S_3_3 S_4_3
+        9: MOVE-PLAYER S_4_3 S_5_3
+       10: MOVE-PLAYER S_5_3 S_6_3
+       11: MOVE-PLAYER S_6_3 S_6_2
+       12: PUSH-BOX S_6_2 S_5_2 S_4_2
+       13: MOVE-PLAYER S_5_2 S_5_3
+       14: MOVE-PLAYER S_5_3 S_4_3
+       15: MOVE-PLAYER S_4_3 S_3_3
+       16: MOVE-PLAYER S_3_3 S_3_2
+       17: MOVE-PLAYER S_3_2 S_3_1
+       18: MOVE-PLAYER S_3_1 S_4_1
+       19: PUSH-BOX S_4_1 S_4_2 S_4_3
+       20: MOVE-PLAYER S_4_2 S_5_2
+       21: MOVE-PLAYER S_5_2 S_5_3
+       22: MOVE-PLAYER S_5_3 S_5_4
+       23: MOVE-PLAYER S_5_4 S_4_4
+       24: MOVE-PLAYER S_4_4 S_4_5
+       25: MOVE-PLAYER S_4_5 S_3_5
+       26: PUSH-BOX S_3_5 S_3_4 S_3_3
+       27: PUSH-BOX S_3_4 S_3_3 S_3_2
+       28: MOVE-PLAYER S_3_3 S_3_4
+       29: MOVE-PLAYER S_3_4 S_4_4
+       30: MOVE-PLAYER S_4_4 S_5_4
+       31: MOVE-PLAYER S_5_4 S_5_3
+       32: MOVE-PLAYER S_5_3 S_5_2
+       33: MOVE-PLAYER S_5_2 S_4_2
+       34: PUSH-BOX S_4_2 S_4_3 S_4_4
+       35: MOVE-PLAYER S_4_3 S_3_3
+       36: MOVE-PLAYER S_3_3 S_3_4
+       37: MOVE-PLAYER S_3_4 S_2_4
+       38: MOVE-PLAYER S_2_4 S_1_4
+       39: MOVE-PLAYER S_1_4 S_1_3
+       40: PUSH-BOX S_1_3 S_2_3 S_3_3
+       41: PUSH-BOX S_2_3 S_3_3 S_4_3
+       42: PUSH-BOX S_3_3 S_4_3 S_5_3
+       43: MOVE-PLAYER S_4_3 S_4_2
+       44: MOVE-PLAYER S_4_2 S_4_1
+       45: MOVE-PLAYER S_4_1 S_3_1
+       46: PUSH-BOX S_3_1 S_3_2 S_3_3
+       47: MOVE-PLAYER S_3_2 S_4_2
+       48: MOVE-PLAYER S_4_2 S_4_3
+       49: PUSH-BOX S_4_3 S_3_3 S_2_3
+       50: MOVE-PLAYER S_3_3 S_3_4
+       51: MOVE-PLAYER S_3_4 S_3_5
+       52: MOVE-PLAYER S_3_5 S_4_5
+       53: PUSH-BOX S_4_5 S_4_4 S_4_3
+       54: MOVE-PLAYER S_4_4 S_5_4
+       55: PUSH-BOX S_5_4 S_5_3 S_5_2
+       56: MOVE-PLAYER S_5_3 S_6_3
+       57: MOVE-PLAYER S_6_3 S_6_2
+       58: PUSH-BOX S_6_2 S_5_2 S_4_2
+       59: MOVE-PLAYER S_5_2 S_5_3
+       60: MOVE-PLAYER S_5_3 S_5_4
+       61: MOVE-PLAYER S_5_4 S_4_4
+       62: MOVE-PLAYER S_4_4 S_3_4
+       63: MOVE-PLAYER S_3_4 S_3_3
+       64: MOVE-PLAYER S_3_3 S_3_2
+       65: PUSH-BOX S_3_2 S_4_2 S_5_2
+       66: PUSH-BOX S_4_2 S_4_3 S_4_4
+       67: MOVE-PLAYER S_4_3 S_5_3
+       68: MOVE-PLAYER S_5_3 S_6_3
+       69: MOVE-PLAYER S_6_3 S_6_2
+       70: PUSH-BOX S_6_2 S_5_2 S_4_2
+       71: MOVE-PLAYER S_5_2 S_5_3
+       72: MOVE-PLAYER S_5_3 S_4_3
+       73: MOVE-PLAYER S_4_3 S_3_3
+       74: MOVE-PLAYER S_3_3 S_3_4
+       75: MOVE-PLAYER S_3_4 S_2_4
+       76: MOVE-PLAYER S_2_4 S_1_4
+       77: MOVE-PLAYER S_1_4 S_1_3
+       78: PUSH-BOX S_1_3 S_2_3 S_3_3
+       79: PUSH-BOX S_2_3 S_3_3 S_4_3
+     
+
+time spent:    0.00 seconds instantiating 86 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 57 facts and 86 actions
+               0.00 seconds creating final representation with 57 relevant facts
+               0.00 seconds building connectivity graph
+               0.06 seconds searching, evaluating 7993 states, to a max depth of 1
+               0.06 seconds total time
+

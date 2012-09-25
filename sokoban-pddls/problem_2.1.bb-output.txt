@@ -1,0 +1,69 @@
+blackbox version 43
+command line:  ./blackbox -o sokoban-domain.pddl -f /dev/stdin
+
+Begin solver specification
+    -maxint        0   -maxsec 10.000000  graphplan
+    -maxint        0   -maxsec 0.000000  chaff
+End solver specification
+Loading domain file: sokoban-domain.pddl
+Loading fact file: /dev/stdin
+Problem name: simple
+Facts loaded.
+time: 1, 66 facts and 3 exclusive pairs.
+time: 2, 70 facts and 21 exclusive pairs.
+time: 3, 76 facts and 81 exclusive pairs.
+time: 4, 78 facts and 104 exclusive pairs.
+time: 5, 79 facts and 109 exclusive pairs.
+time: 6, 80 facts and 116 exclusive pairs.
+time: 7, 80 facts and 109 exclusive pairs.
+time: 8, 81 facts and 117 exclusive pairs.
+time: 9, 83 facts and 147 exclusive pairs.
+time: 10, 83 facts and 135 exclusive pairs.
+time: 11, 83 facts and 126 exclusive pairs.
+time: 12, 84 facts and 139 exclusive pairs.
+time: 13, 85 facts and 153 exclusive pairs.
+time: 14, 86 facts and 166 exclusive pairs.
+Goals first reachable in 14 steps.
+2728 nodes created.
+
+####################################################
+goals at time 15:
+  has-box_s-1-2 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Sat
+Iteration was 270
+Performing plan justification:
+   0 actions were pruned in 0.00 seconds
+
+----------------------------------------------------
+Begin plan
+1 (move-player s-2-2 s-3-2)
+2 (move-player s-3-2 s-3-3)
+3 (move-player s-3-3 s-3-4)
+4 (move-player s-3-4 s-4-4)
+5 (push-box s-4-4 s-4-3 s-4-2)
+6 (move-player s-4-3 s-3-3)
+7 (move-player s-3-3 s-3-2)
+8 (move-player s-3-2 s-3-1)
+9 (move-player s-3-1 s-4-1)
+10 (move-player s-4-1 s-5-1)
+11 (move-player s-5-1 s-5-2)
+12 (push-box s-5-2 s-4-2 s-3-2)
+13 (push-box s-4-2 s-3-2 s-2-2)
+14 (push-box s-3-2 s-2-2 s-1-2)
+End plan
+----------------------------------------------------
+
+14 total actions in plan
+0 entries in hash table, 
+13 total set-creation steps (entries + hits + plan length - 1)
+14 actions tried
+
+####################################################
+Total elapsed time:   0.04 seconds
+Time in milliseconds: 40
+
+####################################################

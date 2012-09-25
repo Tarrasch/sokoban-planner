@@ -1,0 +1,155 @@
+
+ff: parsing domain file
+domain 'SOKOBAN-DOMAIN' defined
+ ... done.
+ff: parsing problem file
+problem 'SIMPLE' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   10 into depth [1]
+                                   9            [1][2][3][4][5][6][7][8][9]
+                                   8            [1][2]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+advancing to distance :   10
+                           9
+                           8
+                           7
+                           6
+                           5
+                           4
+                           3
+                           2
+                           1
+                           0
+
+ff: found legal plan as follows
+
+step    0: MOVE-PLAYER S_4_2 S_4_3
+        1: MOVE-PLAYER S_4_3 S_5_3
+        2: MOVE-PLAYER S_5_3 S_6_3
+        3: MOVE-PLAYER S_6_3 S_6_4
+        4: MOVE-PLAYER S_6_4 S_6_5
+        5: MOVE-PLAYER S_6_5 S_5_5
+        6: MOVE-PLAYER S_5_5 S_4_5
+        7: PUSH-BOX S_4_5 S_4_4 S_4_3
+        8: PUSH-BOX S_4_4 S_4_3 S_4_2
+        9: MOVE-PLAYER S_4_3 S_4_4
+       10: MOVE-PLAYER S_4_4 S_4_5
+       11: MOVE-PLAYER S_4_5 S_5_5
+       12: MOVE-PLAYER S_5_5 S_6_5
+       13: MOVE-PLAYER S_6_5 S_6_6
+       14: MOVE-PLAYER S_6_6 S_6_7
+       15: MOVE-PLAYER S_6_7 S_5_7
+       16: MOVE-PLAYER S_5_7 S_4_7
+       17: PUSH-BOX S_4_7 S_4_6 S_4_5
+       18: PUSH-BOX S_4_6 S_4_5 S_4_4
+       19: MOVE-PLAYER S_4_5 S_4_6
+       20: MOVE-PLAYER S_4_6 S_4_7
+       21: MOVE-PLAYER S_4_7 S_3_7
+       22: MOVE-PLAYER S_3_7 S_2_7
+       23: MOVE-PLAYER S_2_7 S_1_7
+       24: MOVE-PLAYER S_1_7 S_1_8
+       25: MOVE-PLAYER S_1_8 S_1_9
+       26: MOVE-PLAYER S_1_9 S_2_9
+       27: MOVE-PLAYER S_2_9 S_3_9
+       28: MOVE-PLAYER S_3_9 S_4_9
+       29: PUSH-BOX S_4_9 S_4_8 S_4_7
+       30: PUSH-BOX S_4_8 S_4_7 S_4_6
+       31: MOVE-PLAYER S_4_7 S_5_7
+       32: MOVE-PLAYER S_5_7 S_6_7
+       33: MOVE-PLAYER S_6_7 S_6_6
+       34: MOVE-PLAYER S_6_6 S_6_5
+       35: MOVE-PLAYER S_6_5 S_5_5
+       36: MOVE-PLAYER S_5_5 S_4_5
+       37: PUSH-BOX S_4_5 S_4_6 S_4_7
+       38: MOVE-PLAYER S_4_6 S_4_5
+       39: MOVE-PLAYER S_4_5 S_5_5
+       40: MOVE-PLAYER S_5_5 S_6_5
+       41: MOVE-PLAYER S_6_5 S_6_6
+       42: MOVE-PLAYER S_6_6 S_6_7
+       43: MOVE-PLAYER S_6_7 S_5_7
+       44: PUSH-BOX S_5_7 S_4_7 S_3_7
+       45: MOVE-PLAYER S_4_7 S_5_7
+       46: MOVE-PLAYER S_5_7 S_6_7
+       47: MOVE-PLAYER S_6_7 S_6_6
+       48: MOVE-PLAYER S_6_6 S_6_5
+       49: MOVE-PLAYER S_6_5 S_6_4
+       50: MOVE-PLAYER S_6_4 S_6_3
+       51: MOVE-PLAYER S_6_3 S_5_3
+       52: MOVE-PLAYER S_5_3 S_4_3
+       53: PUSH-BOX S_4_3 S_4_4 S_4_5
+       54: PUSH-BOX S_4_4 S_4_5 S_4_6
+       55: MOVE-PLAYER S_4_5 S_5_5
+       56: MOVE-PLAYER S_5_5 S_6_5
+       57: MOVE-PLAYER S_6_5 S_6_6
+       58: MOVE-PLAYER S_6_6 S_6_7
+       59: MOVE-PLAYER S_6_7 S_5_7
+       60: MOVE-PLAYER S_5_7 S_4_7
+       61: PUSH-BOX S_4_7 S_3_7 S_2_7
+       62: PUSH-BOX S_3_7 S_2_7 S_1_7
+       63: MOVE-PLAYER S_2_7 S_3_7
+       64: MOVE-PLAYER S_3_7 S_4_7
+       65: MOVE-PLAYER S_4_7 S_5_7
+       66: MOVE-PLAYER S_5_7 S_6_7
+       67: MOVE-PLAYER S_6_7 S_6_6
+       68: MOVE-PLAYER S_6_6 S_6_5
+       69: MOVE-PLAYER S_6_5 S_5_5
+       70: MOVE-PLAYER S_5_5 S_4_5
+       71: PUSH-BOX S_4_5 S_4_6 S_4_7
+       72: MOVE-PLAYER S_4_6 S_4_5
+       73: MOVE-PLAYER S_4_5 S_5_5
+       74: MOVE-PLAYER S_5_5 S_6_5
+       75: MOVE-PLAYER S_6_5 S_6_6
+       76: MOVE-PLAYER S_6_6 S_6_7
+       77: MOVE-PLAYER S_6_7 S_5_7
+       78: PUSH-BOX S_5_7 S_4_7 S_3_7
+       79: MOVE-PLAYER S_4_7 S_5_7
+       80: MOVE-PLAYER S_5_7 S_6_7
+       81: MOVE-PLAYER S_6_7 S_6_6
+       82: MOVE-PLAYER S_6_6 S_6_5
+       83: MOVE-PLAYER S_6_5 S_6_4
+       84: MOVE-PLAYER S_6_4 S_6_3
+       85: MOVE-PLAYER S_6_3 S_6_2
+       86: MOVE-PLAYER S_6_2 S_6_1
+       87: MOVE-PLAYER S_6_1 S_5_1
+       88: MOVE-PLAYER S_5_1 S_4_1
+       89: PUSH-BOX S_4_1 S_4_2 S_4_3
+       90: PUSH-BOX S_4_2 S_4_3 S_4_4
+       91: PUSH-BOX S_4_3 S_4_4 S_4_5
+       92: PUSH-BOX S_4_4 S_4_5 S_4_6
+       93: MOVE-PLAYER S_4_5 S_5_5
+       94: MOVE-PLAYER S_5_5 S_6_5
+       95: MOVE-PLAYER S_6_5 S_6_6
+       96: MOVE-PLAYER S_6_6 S_6_7
+       97: MOVE-PLAYER S_6_7 S_5_7
+       98: MOVE-PLAYER S_5_7 S_4_7
+       99: PUSH-BOX S_4_7 S_3_7 S_2_7
+      100: MOVE-PLAYER S_3_7 S_4_7
+      101: MOVE-PLAYER S_4_7 S_5_7
+      102: MOVE-PLAYER S_5_7 S_6_7
+      103: MOVE-PLAYER S_6_7 S_6_6
+      104: MOVE-PLAYER S_6_6 S_6_5
+      105: MOVE-PLAYER S_6_5 S_5_5
+      106: MOVE-PLAYER S_5_5 S_4_5
+      107: PUSH-BOX S_4_5 S_4_6 S_4_7
+      108: MOVE-PLAYER S_4_6 S_4_5
+      109: MOVE-PLAYER S_4_5 S_5_5
+      110: MOVE-PLAYER S_5_5 S_6_5
+      111: MOVE-PLAYER S_6_5 S_6_6
+      112: MOVE-PLAYER S_6_6 S_6_7
+      113: MOVE-PLAYER S_6_7 S_5_7
+      114: PUSH-BOX S_5_7 S_4_7 S_3_7
+     
+
+time spent:    0.00 seconds instantiating 104 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 68 facts and 82 actions
+               0.00 seconds creating final representation with 55 relevant facts
+               0.00 seconds building connectivity graph
+               0.02 seconds searching, evaluating 2289 states, to a max depth of 9
+               0.02 seconds total time
+

@@ -1,0 +1,383 @@
+blackbox version 43
+command line:  ./blackbox -o sokoban-domain.pddl -f /dev/stdin
+
+Begin solver specification
+    -maxint        0   -maxsec 10.000000  graphplan
+    -maxint        0   -maxsec 0.000000  chaff
+End solver specification
+Loading domain file: sokoban-domain.pddl
+Loading fact file: /dev/stdin
+Problem name: simple
+Facts loaded.
+time: 1, 108 facts and 3 exclusive pairs.
+time: 2, 111 facts and 15 exclusive pairs.
+time: 3, 120 facts and 111 exclusive pairs.
+time: 4, 123 facts and 151 exclusive pairs.
+time: 5, 129 facts and 249 exclusive pairs.
+time: 6, 132 facts and 299 exclusive pairs.
+time: 7, 134 facts and 307 exclusive pairs.
+time: 8, 136 facts and 332 exclusive pairs.
+time: 9, 138 facts and 344 exclusive pairs.
+Goals reachable at 9 steps but mutually exclusive.
+time: 10, 141 facts and 390 exclusive pairs.
+Goals reachable at 10 steps but mutually exclusive.
+time: 11, 142 facts and 357 exclusive pairs.
+Goals reachable at 11 steps but mutually exclusive.
+time: 12, 143 facts and 325 exclusive pairs.
+Goals reachable at 12 steps but mutually exclusive.
+time: 13, 143 facts and 267 exclusive pairs.
+Goals first reachable in 13 steps.
+4199 nodes created.
+
+####################################################
+goals at time 14:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 34
+
+----------------------------------------------------
+Can't solve in 13 steps
+time: 14, 143 facts and 233 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 15:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 86
+
+----------------------------------------------------
+Can't solve in 14 steps
+time: 15, 143 facts and 220 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 16:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 395
+
+----------------------------------------------------
+Can't solve in 15 steps
+time: 16, 143 facts and 214 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 17:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 765
+
+----------------------------------------------------
+Can't solve in 16 steps
+time: 17, 143 facts and 210 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 18:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 2714
+
+----------------------------------------------------
+Can't solve in 17 steps
+time: 18, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 19:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 4676
+
+----------------------------------------------------
+Can't solve in 18 steps
+time: 19, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 20:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 13312
+
+----------------------------------------------------
+Can't solve in 19 steps
+time: 20, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 21:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 21815
+
+----------------------------------------------------
+Can't solve in 20 steps
+time: 21, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 22:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 52402
+
+----------------------------------------------------
+Can't solve in 21 steps
+time: 22, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 23:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 86008
+
+----------------------------------------------------
+Can't solve in 22 steps
+time: 23, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 24:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 183820
+
+----------------------------------------------------
+Can't solve in 23 steps
+time: 24, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 25:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 317464
+
+----------------------------------------------------
+Can't solve in 24 steps
+time: 25, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 26:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 654438
+
+----------------------------------------------------
+Can't solve in 25 steps
+time: 26, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 27:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 1216102
+
+----------------------------------------------------
+Can't solve in 26 steps
+time: 27, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 28:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 2510125
+
+----------------------------------------------------
+Can't solve in 27 steps
+time: 28, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 29:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 4767073
+
+----------------------------------------------------
+Can't solve in 28 steps
+time: 29, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 30:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 9650665
+
+----------------------------------------------------
+Can't solve in 29 steps
+time: 30, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 31:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 17655158
+
+----------------------------------------------------
+Can't solve in 30 steps
+time: 31, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 32:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 34211080
+
+----------------------------------------------------
+Can't solve in 31 steps
+time: 32, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 33:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 58967125
+
+----------------------------------------------------
+Can't solve in 32 steps
+time: 33, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 34:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 108351487
+
+----------------------------------------------------
+Can't solve in 33 steps
+time: 34, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 35:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 176452601
+
+----------------------------------------------------
+Can't solve in 34 steps
+time: 35, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 36:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
+Result is Unsat
+Iteration was 307469198
+
+----------------------------------------------------
+Can't solve in 35 steps
+time: 36, 143 facts and 209 exclusive pairs.
+372 new nodes added.
+
+####################################################
+goals at time 37:
+  has-box_s-4-2 has-box_s-4-3 has-box_s-4-4 
+
+
+----------------------------------------------------
+Invoking solver graphplan
