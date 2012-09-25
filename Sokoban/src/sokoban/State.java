@@ -2,7 +2,6 @@ package sokoban;
 
 
 import java.awt.Point;
-import java.util.Arrays;
 import java.util.Set;
 
 /*

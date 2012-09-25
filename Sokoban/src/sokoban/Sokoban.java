@@ -43,9 +43,12 @@ public class Sokoban {
         while(!s.equals(initState)){
             Move m = moveMade.get(s);
             moves.add(m);
-            
+            System.out.println(m);
+            Main.print_status(gameMap, s);            
             s = cameFrom.get(s);
         }
+        
+        System.out.println("Took " + moves.size() + " steps in total.");
         
         return moves;
     }
@@ -129,13 +132,9 @@ public class Sokoban {
     }
     
     public void outputSolution(){
-        List<Move> sol = this.solve();
-        
-        for(Move m: sol){
-            System.out.println(m);
-        }
     }
     
 
 
 }
+ 

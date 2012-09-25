@@ -129,7 +129,7 @@ public class Main {
 
         // Initialize game
         Sokoban game = new Sokoban(map, state);
-        game.outputSolution();
+        game.solve();
 
     }
 
