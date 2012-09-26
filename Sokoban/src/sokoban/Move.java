@@ -35,7 +35,7 @@ public class Move {
 
     @Override
     public String toString() {
-        String[] sa = {"up", "right", "down", "left"};
+        String[] sa = {"down", "right", "up", "left"};
         return "Move " + sa[dir];
     }
 }

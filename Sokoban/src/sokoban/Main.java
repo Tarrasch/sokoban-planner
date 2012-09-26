@@ -152,7 +152,7 @@ public class Main {
                         out = "_";
                         break;
                 }
-                if (agent.x == y && agent.y == x) {
+                if (agent.y == y && agent.x == x) {
                     out = "$";
                 }
                 if (boxes.contains(new Point(x, y))) {

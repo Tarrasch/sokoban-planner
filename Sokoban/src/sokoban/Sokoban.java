@@ -43,11 +43,12 @@ public class Sokoban {
         while(!s.equals(initState)){
             Move m = moveMade.get(s);
             moves.add(m);
-            System.out.println(m);
             Main.print_status(gameMap, s);            
+            System.out.println(m);
             s = cameFrom.get(s);
         }
         
+        Main.print_status(gameMap, s);            
         System.out.println("Took " + moves.size() + " steps in total.");
         
         return moves;
