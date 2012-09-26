@@ -18,7 +18,7 @@ ons = dons + ["(on d#{n} p3)"]
 psmallers = (1..n).map { |i| (1..3).map { |j| "(smaller d#{i} p#{j})"} }.flatten
 dsmallers = (1..n).map { |i| (1...i).map { |j| "(smaller d#{j} d#{i})"} }.flatten
 
-goal = dons + ["(on d#{n} p1)"]
+goal = (dons + ["(on d#{n} p1)"]).shuffle
 
 print "(define (problem hanoi-#{n})"
 print "  (:domain hanoi-domain)"
