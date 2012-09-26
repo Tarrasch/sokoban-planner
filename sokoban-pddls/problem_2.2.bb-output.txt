@@ -1,5 +1,5 @@
 blackbox version 43
-command line:  ./blackbox -o sokoban-domain.pddl -f /dev/stdin
+command line:  ./blackbox -o sokoban-domain.pddl -f /dev/stdin -maxauto 200 -step 4
 
 Begin solver specification
     -maxint        0   -maxsec 10.000000  graphplan

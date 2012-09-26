@@ -1,5 +1,5 @@
 blackbox version 43
-command line:  ./blackbox -o sokoban-domain.pddl -f /dev/stdin
+command line:  ./blackbox -o sokoban-domain.pddl -f /dev/stdin -maxauto 200 -step 4
 
 Begin solver specification
     -maxint        0   -maxsec 10.000000  graphplan
@@ -445,17 +445,13 @@ Iteration was 328447422
 
 ----------------------------------------------------
 Can't solve in 50 steps
-
-----------------------------------------------------
-NO SOLUTION
-Problem not solvable: no solution exists in alloted time
-    Search halted after 50 steps
-    12190025 entries in hash table and 13950156 hits
-    avg set size 41
-----------------------------------------------------
+time: 51, 188 facts and 379 exclusive pairs.
+458 new nodes added.
 
 ####################################################
-Total elapsed time:   58 minutes, 50 seconds
-Time in milliseconds: 3529211
+goals at time 52:
+  has-box_s-1-7 has-box_s-2-7 has-box_s-3-7 
 
-####################################################
+
+----------------------------------------------------
+Invoking solver graphplan
